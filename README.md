@@ -30,14 +30,16 @@
 
 | Project | Focus | Status |
 |---|---|---|
-| **[Finance Research Agents](https://github.com/ShirjanKhadka1/finance-research-agents)** | 10 free, local AI research agents + runbooks, accuracy auditor | Live |
-| **[Investment Analyst Toolkit](https://github.com/ShirjanKhadka1/investment-analyst-toolkit)** | Tested Python: ratios, DuPont, DCF, multiples, options, Monte Carlo, predictive + autonomous — zero dependencies | 37/37 tests passing, CI on GitHub |
-| **[Equity Research Playbook](https://github.com/ShirjanKhadka1/equity-research-playbook)** | Initiation, earnings, forensic, valuation-sanity templates | Live (deploying) |
-| **[Nepali Capital Market Research](https://github.com/ShirjanKhadka1/nepali-capital-market-research)** | Nepal's market structure: participants, instruments, regulation | Live (deploying) |
-| **[Nepali Business Opportunities](https://github.com/ShirjanKhadka1/nepali-business-opportunities)** | 8-sector opportunity scorecard, alphabetical, ranked only by evidence | Live (deploying) |
-| **[Nepal Market Research](https://github.com/ShirjanKhadka1/nepal-market-research)** | Sourced NEPSE case studies, starting with Bottlers Nepal (Terai) | Inputs only, live (deploying) |
+| **[Finance Research Agents](https://github.com/ShirjanKhadka1/finance-research-agents)** | 10 free, local AI research agents + 4 runbooks, accuracy auditor | Live |
+| **[Investment Analyst Toolkit](https://github.com/ShirjanKhadka1/investment-analyst-toolkit)** | Tested Python: ratios, DuPont, DCF, multiples, options, Monte Carlo, predictive + autonomous — zero dependencies | Live — 47/47 tests passing, CI on GitHub |
+| **[Equity Research Playbook](https://github.com/ShirjanKhadka1/equity-research-playbook)** | Initiation, earnings, forensic, valuation-sanity templates | Live |
+| **[Nepali Capital Market Research](https://github.com/ShirjanKhadka1/nepali-capital-market-research)** | Nepal's market structure: participants, instruments, regulation, plus the NEPSE EMA/SMA scanner | Live |
+| **[Nepali Business Opportunities](https://github.com/ShirjanKhadka1/nepali-business-opportunities)** | 8-sector opportunity scorecard, alphabetical, ranked only by evidence | Live |
+| **[Nepal Market Research](https://github.com/ShirjanKhadka1/nepal-market-research)** | Sourced NEPSE case studies, starting with Bottlers Nepal (Terai) | Live — inputs only |
+| **[Financial Research Analyst Agent](https://github.com/ShirjanKhadka1/financial-research-analyst-agent)** | Standalone Python pipeline: technicals, Piotroski, valuation by company type, debate + Risk Veto, hash-chained audit log | Live — 4/4 tests passing, CI on GitHub |
+| **[NEPSE Scanner](https://github.com/ShirjanKhadka1/nepali-capital-market-research/tree/main/scanner)** | NEPSE EMA/SMA crossover scanner inside Nepali Capital Market Research: crossovers, RSI, MACD, Bollinger, ATR, Stochastic, ADX, volume checks | Live — 40/40 tests passing |
 
-> Finance Research Agents and Investment Analyst Toolkit are live now. The other four repos are deploying next — nothing here claims a star, fork, or user count it does not have.
+> All repos above are live and public. Nothing here claims a star, fork, or user count it does not have.
 
 ---
 
