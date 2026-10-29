@@ -31,7 +31,12 @@ DARK = dict(bg0="#070A12", bg1="#0B1020", panel="#121A2E", line="#2A3550",
             text="#E8ECF4", muted="#9AA7C2", grid="#1E2A44")
 LIGHT = dict(bg0="#F5F2EA", bg1="#EDE9DC", panel="#FFFFFF", line="#D8D2C0",
              gold="#9A7B14", gold2="#C9A227", teal="#2F6F6A", ice="#3E6B94",
-             text="#10182A", muted="#4A556E", grid="#DCD6C4")
+             text="#10182A", muted="#4A556E", grid="#DCD6C4",
+             # Contrast fix 29 Oct 2026: gold2 (#C9A227) on cream was 2.16:1
+             # (FAIL). Tagline uses deep bronze #7A5E00: 5.47:1 on #F5F2EA,
+             # 5.04:1 on #EDE9DC (both PASS AA). Dark variant keeps gold2.
+             tagline="#7A5E00", sweep_op="0.06", vig_edge="0.52",
+             bar_op="0.65", bar_op2="0.9", ring="3")
 
 MOTION_CSS = """<style>
 @keyframes sweep{0%{transform:translateX(-30%)}100%{transform:translateX(130%)}}
@@ -93,8 +98,8 @@ def hero(pal, portrait_b64, dark=True):
         delay = (i % 5) * 1.3
         bars.append(
             f'<g class="bar" style="animation-delay:{delay}s">'
-            f'<rect x="{x}" y="{H - 180 - h}" width="90" height="{h}" fill="{col}" opacity="0.55"/>'
-            f'<rect x="{x + 30}" y="{H - 180 - h - 46}" width="30" height="46" fill="{col}" opacity="0.8"/>'
+            f'<rect x="{x}" y="{H - 180 - h}" width="90" height="{h}" fill="{col}" opacity="{pal.get("bar_op", "0.55")}"/>'
+            f'<rect x="{x + 30}" y="{H - 180 - h - 46}" width="30" height="46" fill="{col}" opacity="{pal.get("bar_op2", "0.8")}"/>'
             f'</g>')
     particles = "".join(
         f'<circle class="particle" style="animation-delay:{i * 1.7}s" cx="{200 + i * 210}" '
@@ -106,8 +111,8 @@ def hero(pal, portrait_b64, dark=True):
     name_face = name.replace('fill="CURRENT"', f'fill="{pal["text"]}"')
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Shirjan Khadka — Finance Research, Open Source, Kathmandu Nepal">
 <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{pal["bg0"]}"/><stop offset="1" stop-color="{pal["bg1"]}"/></linearGradient>
-<linearGradient id="sweepg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".12"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
-<radialGradient id="vig" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient>
+<linearGradient id="sweepg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity="{pal["sweep_op"] if "sweep_op" in pal else ".12"}"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+<radialGradient id="vig" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="{pal.get("vig_edge", ".45")}"/></radialGradient>
 <clipPath id="portraitClip"><circle cx="300" cy="330" r="185"/></clipPath></defs>
 {MOTION_CSS}
 <rect width="{W}" height="{H}" fill="url(#bg)"/>
@@ -122,11 +127,11 @@ def hero(pal, portrait_b64, dark=True):
 <g transform="translate(8 10)">{name_shadow}</g>
 <g transform="translate(2 2)">{name_gold}</g>
 {name_face}
-<text x="1475" y="510" text-anchor="middle" font-family="{SANS}" font-size="44" letter-spacing="4" fill="{pal["gold2"]}">FINANCE RESEARCH · OPEN SOURCE · KATHMANDU, NEPAL</text>
+<text x="1475" y="510" text-anchor="middle" font-family="{SANS}" font-size="44" letter-spacing="4" fill="{pal.get("tagline", pal["gold2"])}">FINANCE RESEARCH · OPEN SOURCE · KATHMANDU, NEPAL</text>
 <text x="1475" y="580" text-anchor="middle" font-family="{SANS}" font-size="36" fill="{pal["muted"]}">Free tools. Open code. Honest research.</text>
 <rect x="1175" y="630" width="600" height="4" fill="{pal["gold"]}"/>
 <image href="data:image/jpeg;base64,{portrait_b64}" x="115" y="145" width="370" height="370" clip-path="url(#portraitClip)" preserveAspectRatio="xMidYMid slice"/>
-<circle cx="300" cy="330" r="185" fill="none" stroke="{pal["gold"]}" stroke-width="5"/>
+<circle cx="300" cy="330" r="185" fill="none" stroke="{pal["gold"]}" stroke-width="{pal.get("ring", "5")}"/>
 <circle cx="300" cy="330" r="196" fill="none" stroke="{pal["gold"]}" stroke-width="1.5" opacity="0.5"/>
 {grain(pal)}
 </svg>"""
