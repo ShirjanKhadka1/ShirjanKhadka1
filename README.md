@@ -101,8 +101,8 @@ Numbers are fetched from the public GitHub API (see `scripts/stats.json`, as of 
 | Repo | Tests (local, 28 Oct 2026) | Latest CI Tests run |
 |---|---|---|
 | Investment Analyst Toolkit | 129/129 | Matrix jobs pass (ubuntu/macOS/Windows); quality (ruff) job fails on `tests/test_phase9_ensemble.py` (RUF015). That fix belongs in the toolkit repo, not here. |
-| Nepali Capital Market Research (scanner) | 57/57 | Latest Tests run: failure — job-level detail not yet confirmed, so no green claim is made here. |
-| Financial Research Analyst Agent | 46/46 | Latest Tests run: failure — job-level detail not yet confirmed, so no green claim is made here. |
+| Nepali Capital Market Research (scanner) | 57/57 | Matrix jobs pass (all 9, ubuntu/macOS/Windows); smoke passes; quality (ruff) job fails — same pattern as the toolkit. |
+| Financial Research Analyst Agent | 46/46 | Matrix jobs pass (all 9, ubuntu/macOS/Windows); smoke passes; quality (ruff) job fails — same pattern as the toolkit. |
 | Other repos | Markdown/research, no test suite | — |
 
 No repo on this page is labelled "Live" on CI grounds alone. CodeQL runs for the code repos completed successfully on 28 Oct 2026.
