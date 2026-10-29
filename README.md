@@ -1,81 +1,131 @@
-<!--
-  GITHUB PROFILE README — PROFESSIONAL DESIGN v3, NOT A RESUME
-  Publish: public repo named exactly ShirjanKhadka1, this file as README.md,
-  with assets/ alongside it. No experience, no job history.
-  Stats badges are dynamic, from real GitHub data. Nothing hard-coded.
--->
-
 <div align="center">
 
-<img src="assets/banner.svg" alt="Shirjan Khadka — Finance Research" width="100%">
-
-<img src="assets/profile-picture-circle.png" alt="Shirjan Khadka" width="150">
-
-# Shirjan Khadka
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
+  <img src="assets/hero-dark.svg" alt="Shirjan Khadka — Finance Research, Open Source, Kathmandu, Nepal. Hero title card with a 3D financial skyline." width="1200" height="502">
+</picture>
 
 **Finance Research · Open Source · Kathmandu, Nepal**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-shirjankhadka.com.np-111111?style=flat-square)](https://shirjankhadka.com.np/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/shirjankhadkab)
-[![GitHub](https://img.shields.io/badge/GitHub-ShirjanKhadka1-111111?style=flat-square&logo=github&logoColor=white)](https://github.com/ShirjanKhadka1)
+Free tools. Open code. Honest research.
 
-*Building free, open finance tools that anyone can run on their own machine —*
-*no app, no subscription, no server, no data sent anywhere.*
+[Portfolio](https://shirjankhadka.com.np) · [LinkedIn](https://www.linkedin.com/in/shirjankhadkab) · [GitHub](https://github.com/ShirjanKhadka1)
+
+*Building free, open finance tools that anyone can run on their own machine — no app, no subscription, no server, no data sent anywhere.*
 
 </div>
 
 ---
 
-## Projects
+## Now Showing
 
-| Project | Focus | Status |
+<table>
+<tr>
+<td width="50%">
+<a href="https://github.com/ShirjanKhadka1/finance-research-agents">
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-1-light.svg"><img src="assets/posters/poster-1-dark.svg" alt="Finance Research Agents poster: 18 agents, 10 runbooks" width="430" height="187"></picture>
+</a>
+</td>
+<td width="50%">
+<a href="https://github.com/ShirjanKhadka1/investment-analyst-toolkit">
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-2-light.svg"><img src="assets/posters/poster-2-dark.svg" alt="Investment Analyst Toolkit poster: 129 tests" width="430" height="187"></picture>
+</a>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<a href="https://github.com/ShirjanKhadka1/equity-research-playbook">
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-3-light.svg"><img src="assets/posters/poster-3-dark.svg" alt="Equity Research Playbook poster: research templates" width="430" height="187"></picture>
+</a>
+</td>
+<td width="50%">
+<a href="https://github.com/ShirjanKhadka1/nepali-capital-market-research">
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-4-light.svg"><img src="assets/posters/poster-4-dark.svg" alt="Nepali Capital Market Research poster: NEPSE scanner, 57 tests" width="430" height="187"></picture>
+</a>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<a href="https://github.com/ShirjanKhadka1/nepal-market-research">
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-5-light.svg"><img src="assets/posters/poster-5-dark.svg" alt="Nepal Market Research poster: BNT study, inputs only" width="430" height="187"></picture>
+</a>
+</td>
+<td width="50%">
+<a href="https://github.com/ShirjanKhadka1/nepali-business-opportunities">
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-6-light.svg"><img src="assets/posters/poster-6-dark.svg" alt="Nepali Business Opportunities poster: 8 sectors, alphabetical" width="430" height="187"></picture>
+</a>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<a href="https://github.com/ShirjanKhadka1/financial-research-analyst-agent">
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-7-light.svg"><img src="assets/posters/poster-7-dark.svg" alt="Financial Research Analyst Agent poster: 46 tests" width="430" height="187"></picture>
+</a>
+</td>
+<td width="50%">
+<a href="https://shirjankhadka.com.np/nepse-decode">
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-8-light.svg"><img src="assets/posters/poster-8-dark.svg" alt="NEPSE Tools on the portfolio site poster" width="430" height="187"></picture>
+</a>
+</td>
+</tr>
+</table>
+
+> The NEPSE tools card links to the public portfolio website only. No private repository is linked or referenced anywhere on this page.
+
+---
+
+## Capabilities
+
+`Python` · `DCF` · `Valuation multiples` · `Monte Carlo` · `Options` · `Risk` · `Forecasting` · `Backtesting` · `NEPSE analytics` · `Research agents`
+
+Every tag above is implemented in the repos linked above — DCF, multiples, options (Black–Scholes), Monte Carlo, risk (VaR/CVaR/drawdown), forecasting with walk-forward comparison, and backtesting all live in the Investment Analyst Toolkit; NEPSE analytics in the scanner; research agents in the agents pack.
+
+---
+
+## By the numbers
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="generated/numbers-light.svg">
+  <img src="generated/numbers-dark.svg" alt="By the numbers: 7 public finance repos, 232 tests passing, 187 commits" width="900" height="210">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="generated/skyline-light.svg">
+  <img src="generated/skyline-dark.svg" alt="Activity skyline: commits per finance repository, fetched from the GitHub API" width="900" height="260">
+</picture>
+
+Numbers are fetched from the public GitHub API (see `scripts/stats.json`, as of 29 Oct 2026) and test counts were verified locally on 28 Oct 2026. The skyline shows commits per repository — it is not a contribution calendar, because the full contribution calendar cannot be sourced cleanly with the available token scope.
+
+### Status, honestly stated (29 Oct 2026)
+
+| Repo | Tests (local, 28 Oct 2026) | Latest CI Tests run |
 |---|---|---|
-| **[Finance Research Agents](https://github.com/ShirjanKhadka1/finance-research-agents)** | 16 free, local AI research agents + 8 runbooks, accuracy auditor | Live |
-| **[Investment Analyst Toolkit](https://github.com/ShirjanKhadka1/investment-analyst-toolkit)** | Tested Python: ratios, DuPont, DCF, multiples, options, Monte Carlo, predictive + autonomous — zero dependencies | Live — 129/129 tests passing, CI on GitHub |
-| **[Equity Research Playbook](https://github.com/ShirjanKhadka1/equity-research-playbook)** | Initiation, earnings, forensic, valuation-sanity templates | Live |
-| **[Nepali Capital Market Research](https://github.com/ShirjanKhadka1/nepali-capital-market-research)** | Nepal's market structure: participants, instruments, regulation, plus the NEPSE EMA/SMA scanner | Live |
-| **[Nepali Business Opportunities](https://github.com/ShirjanKhadka1/nepali-business-opportunities)** | 8-sector opportunity scorecard, alphabetical, ranked only by evidence | Live |
-| **[Nepal Market Research](https://github.com/ShirjanKhadka1/nepal-market-research)** | Sourced NEPSE case studies, starting with Bottlers Nepal (Terai) | Live — inputs only |
-| **[Financial Research Analyst Agent](https://github.com/ShirjanKhadka1/financial-research-analyst-agent)** | Standalone Python pipeline: technicals, Piotroski, valuation by company type, debate + Risk Veto, hash-chained audit log | Live — 46/46 tests passing, CI on GitHub |
-| **[NEPSE Scanner](https://github.com/ShirjanKhadka1/nepali-capital-market-research/tree/main/scanner)** | NEPSE EMA/SMA crossover scanner inside Nepali Capital Market Research: crossovers, RSI, MACD, Bollinger, ATR, Stochastic, ADX, volume checks | Live — 57/57 tests passing |
+| Investment Analyst Toolkit | 129/129 | Matrix jobs pass (ubuntu/macOS/Windows); quality (ruff) job fails on `tests/test_phase9_ensemble.py` (RUF015). That fix belongs in the toolkit repo, not here. |
+| Nepali Capital Market Research (scanner) | 57/57 | Matrix jobs pass (all 9, ubuntu/macOS/Windows); smoke passes; quality (ruff) job fails — same pattern as the toolkit. |
+| Financial Research Analyst Agent | 46/46 | Matrix jobs pass (all 9, ubuntu/macOS/Windows); smoke passes; quality (ruff) job fails — same pattern as the toolkit. |
+| Other repos | Markdown/research, no test suite | — |
 
-> All repos above are live and public. Nothing here claims a star, fork, or user count it does not have.
+No repo on this page is labelled "Live" on CI grounds alone. CodeQL runs for the code repos completed successfully on 28 Oct 2026.
 
 ---
 
 ## Principles
 
-| | |
-|---|---|
-| **Thesis first** | If it takes more than a paragraph, it's not ready. |
-| **Every number sourced** | Source + period, on the same page as the number. |
-| **Downside always** | A thesis with no way to be wrong is a pitch. |
-| **Unfinished labelled** | Inputs-only studies are labelled inputs-only. |
-| **Research only** | Never investment advice, never a buy/sell recommendation. |
-
----
-
-## Focus
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
-![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoft-excel&logoColor=white)
-![Financial Modeling](https://img.shields.io/badge/Financial_Modeling-111111?style=flat-square)
-![Valuation](https://img.shields.io/badge/Valuation-111111?style=flat-square)
-![NEPSE](https://img.shields.io/badge/NEPSE_Research-111111?style=flat-square)
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="assets/principles-light.svg">
+  <img src="assets/principles-dark.svg" alt="Principles: sourced numbers, honest downside, open code" width="900" height="310">
+</picture>
 
 ---
 
 <div align="center">
 
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=ShirjanKhadka1&show_icons=true&theme=default&hide_border=true)
-![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ShirjanKhadka1&layout=compact&theme=default&hide_border=true)
+### Credits
 
-*Stats render from real GitHub data.*
+🌐 [shirjankhadka.com.np](https://shirjankhadka.com.np) · 💼 [LinkedIn](https://www.linkedin.com/in/shirjankhadkab) · 🐙 [GitHub](https://github.com/ShirjanKhadka1) · 📍 Kathmandu, Nepal
 
----
+*Research and education only. Never investment advice, never a buy/sell recommendation, never guaranteed returns.*
 
-🌐 [shirjankhadka.com.np](https://shirjankhadka.com.np/) · 💼 [LinkedIn](https://linkedin.com/in/shirjankhadkab) · 📍 Kathmandu, Nepal
+*Profile generated 29 Oct 2026. Regenerate with `make verify` + `scripts/fetch_stats.py` + `scripts/generate.py` (see DESIGN.md).*
 
 </div>

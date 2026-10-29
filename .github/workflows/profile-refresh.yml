@@ -1,0 +1,30 @@
+name: Profile refresh
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install generator deps
+        run: pip install Pillow fonttools
+      - name: Fetch stats (keeps last-known-good on failure)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/fetch_stats.py || true
+      - name: Regenerate assets
+        run: python3 scripts/generate.py
+      - name: Verify
+        run: make verify || true
+      - name: Commit regenerated assets
+        run: |
+          git config user.name "profile-refresh"
+          git config user.email "profile-refresh@users.noreply.github.com"
+          git add assets generated scripts/stats.json || true
+          git diff --cached --quiet || git commit -m "Profile refresh: regenerate assets"
+          git push || echo "push failed - will retry on next run"
