@@ -122,3 +122,48 @@ FAIL); portrait softened (see Contrast fix section); dark hero
 unchanged in layout and verified visually. CI-status honesty: see
 README status table; the toolkit ruff failure is real and is NOT
 hidden.
+
+## Poster wrap fix (29 Oct 2026, branch design/poster-wrap-fix)
+
+Owner's live screenshot showed poster titles clipping at the card edge
+in the "Now Showing" grid, and asked for the NEPSE Tools / Nepse Decode
+card to be removed entirely. Both are addressed here; heroes untouched.
+
+- Nepse Decode card removed: its README grid cell, its link, and the
+  "NEPSE tools card links..." note are gone from the README, and
+  assets/posters/poster-8-dark.svg + poster-8-light.svg are deleted
+  from this branch. No link to nepse-decode or the portfolio's Nepse
+  Decode page remains anywhere in the README. The other 7 cards are
+  unchanged in membership.
+- Wrapping (scripts/generate.py, poster()): SVG <text> does not wrap,
+  and poster titles are vector paths, so widths are measured exactly
+  from DejaVu Bold glyph advances. Titles now word-wrap greedily to
+  at most 2 lines within a 680px safe width (x=40..720 of the 760px
+  viewBox); the font shrinks only if a single word alone overflows
+  (no title needed it — all wrapped at 44). Two-line titles move the
+  gold rule to y=132 and the subtitle to y=188 so nothing collides.
+  Subtitles are wrapped the same way against a conservative DejaVu
+  Sans estimate (wider than the Arial/Helvetica browsers actually
+  use), so a subtitle that fits here fits in the browser too.
+- Before (single line, DejaVu Bold 44) → after:
+  - "Nepali Capital Market Research" 782px, clipped → "Nepali Capital
+    Market" / "Research" (538 / 229px)
+  - "Nepali Business Opportunities" 752px, clipped → "Nepali
+    Business" / "Opportunities" (393 / 343px)
+  - "Financial Research Analyst Agent" 832px, clipped → "Financial
+    Research Analyst" / "Agent" (669 / 148px)
+  - Other titles already fit (627–669px) and stay on one line.
+  - Subtitles wrapped where the conservative estimate overflowed:
+    playbook and analyst-agent subtitles now run to 2 lines.
+- Verified numbers used (Phase 11 live READMEs): toolkit 195 tests,
+  scanner 70 tests, analyst-agent 49 tests, agents 18/10, playbook
+  templates, BNT study "inputs + skeleton, not a valuation",
+  opportunities "8 sectors, alphabetical, not ranked".
+- Verification: width script over all 7 posters (titles, subtitles,
+  pills, stat lines) — ALL FIT within x=40..720; every poster SVG
+  < 11 KB (< 400 KB budget); no scripts or external references in
+  the SVGs; all README <img> keep alt + width/height. Screenshots
+  re-rendered from a local preview page with Playwright + Meta
+  Chromium (desktop + mobile, dark + light) and viewed: all 7 titles
+  fully visible, no card clips, no Nepse Decode card. Contrast
+  unchanged from the merged heroes/posters (palette untouched).
