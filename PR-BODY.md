@@ -41,10 +41,12 @@ The README does NOT label any repo "Live" on CI grounds, because the
 latest CI picture is mixed (29 Oct 2026): the toolkit's Tests matrix
 jobs pass on ubuntu/macOS/Windows, but its quality (ruff) job fails on
 `tests/test_phase9_ensemble.py` (RUF015). That fix belongs in the
-toolkit repo, not in this profile repo. The scanner and analyst-agent
-latest Tests runs also show failure; job-level detail was not yet
-confirmed when this PR was built, so no green claim is made for them
-either. CodeQL runs for the code repos completed successfully on
+toolkit repo, not in this profile repo. CONFIRMED 29 Oct 2026 (supersedes the earlier unconfirmed wording):
+all three code repos show the same pattern in their latest Tests runs
+(toolkit run 40729022134, scanner run 40729030272, analyst-agent run
+40726992686): all 9 matrix test jobs success, smoke success, and the
+quality job failing on the ruff step. So, precisely: tests themselves
+pass everywhere; only the ruff quality gate fails in all three repos. CodeQL runs for the code repos completed successfully on
 28 Oct 2026. Test counts quoted (129 / 57 / 46 = 232) were verified
 locally on 28 Oct 2026.
 
