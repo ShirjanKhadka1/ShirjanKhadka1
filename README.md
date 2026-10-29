@@ -30,7 +30,7 @@ Free tools. Open code. Honest research.
 </td>
 <td width="50%">
 <a href="https://github.com/ShirjanKhadka1/investment-analyst-toolkit">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-2-light.svg"><img src="assets/posters/poster-2-dark.svg" alt="Investment Analyst Toolkit poster: 129 tests" width="430" height="187"></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-2-light.svg"><img src="assets/posters/poster-2-dark.svg" alt="Investment Analyst Toolkit poster: 195 tests" width="430" height="187"></picture>
 </a>
 </td>
 </tr>
@@ -42,14 +42,14 @@ Free tools. Open code. Honest research.
 </td>
 <td width="50%">
 <a href="https://github.com/ShirjanKhadka1/nepali-capital-market-research">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-4-light.svg"><img src="assets/posters/poster-4-dark.svg" alt="Nepali Capital Market Research poster: NEPSE scanner, 57 tests" width="430" height="187"></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-4-light.svg"><img src="assets/posters/poster-4-dark.svg" alt="Nepali Capital Market Research poster: NEPSE scanner, 70 tests" width="430" height="187"></picture>
 </a>
 </td>
 </tr>
 <tr>
 <td width="50%">
 <a href="https://github.com/ShirjanKhadka1/nepal-market-research">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-5-light.svg"><img src="assets/posters/poster-5-dark.svg" alt="Nepal Market Research poster: BNT study, inputs only" width="430" height="187"></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-5-light.svg"><img src="assets/posters/poster-5-dark.svg" alt="Nepal Market Research poster: BNT study, inputs + skeleton" width="430" height="187"></picture>
 </a>
 </td>
 <td width="50%">
@@ -61,18 +61,11 @@ Free tools. Open code. Honest research.
 <tr>
 <td width="50%">
 <a href="https://github.com/ShirjanKhadka1/financial-research-analyst-agent">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-7-light.svg"><img src="assets/posters/poster-7-dark.svg" alt="Financial Research Analyst Agent poster: 46 tests" width="430" height="187"></picture>
-</a>
-</td>
-<td width="50%">
-<a href="https://shirjankhadka.com.np/nepse-decode">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-8-light.svg"><img src="assets/posters/poster-8-dark.svg" alt="NEPSE Tools on the portfolio site poster" width="430" height="187"></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-7-light.svg"><img src="assets/posters/poster-7-dark.svg" alt="Financial Research Analyst Agent poster: 49 tests" width="430" height="187"></picture>
 </a>
 </td>
 </tr>
 </table>
-
-> The NEPSE tools card links to the public portfolio website only. No private repository is linked or referenced anywhere on this page.
 
 ---
 
