@@ -1,6 +1,8 @@
 <div align="center">
 
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="assets/hero-mobile-light.svg">
+  <source media="(max-width: 600px)" srcset="assets/hero-mobile-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
   <img src="assets/hero-dark.svg" alt="Shirjan Khadka — Finance Research, Open Source, Kathmandu, Nepal. Hero title card with a 3D financial skyline." width="1200" height="502">
 </picture>
