@@ -1,0 +1,24 @@
+{
+  "repo": "ShirjanKhadka1",
+  "agents": 18,
+  "runbooks": 10,
+  "toolkit_tests": 195,
+  "analyst_tests": 49,
+  "scanner_tests": 70,
+  "playbook_tests": 6,
+  "tests_total": 320,
+  "tests_note": "sum of toolkit + analyst-agent + scanner + playbook tests_total, each from that repo's generated status.json",
+  "sectors": 8,
+  "generated_by": "scripts/generate_status.py (Round 3: fetched owning repos' status.json)",
+  "generated_at": "2026-10-29",
+  "method": "read from local status files under /home/hatch/workspace/r3clone/profile-status-input (R3 branch artifacts); re-run with the default after the R3 PRs merge to confirm",
+  "sources": {
+    "finance-research-agents": "fetched",
+    "investment-analyst-toolkit": "fetched",
+    "financial-research-analyst-agent": "fetched",
+    "nepali-capital-market-research": "fetched",
+    "nepal-market-research": "fetched",
+    "nepali-business-opportunities": "fetched",
+    "equity-research-playbook": "fetched"
+  }
+}
