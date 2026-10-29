@@ -36,13 +36,48 @@ loaded via `<img>`. Every animation is cancelled by
 ## Assets and budgets (measured 29 Oct 2026)
 | Asset | Size |
 |---|---|
-| hero-dark.svg / hero-light.svg | 62 KB each (portrait embedded as data URI) |
+| hero-dark.svg / hero-light.svg | 51 KB each (portrait embedded as data URI) |
 | principles-dark/light.svg | 5 KB each |
 | posters/poster-N-dark/light.svg (16) | 8–10 KB each |
-| portrait.jpg (640px, duotone) | 36 KB |
+| portrait.jpg (640px, soft warm-grey duotone, contrast-fix) | 27 KB |
 | generated/skyline-*.svg | 3.5 KB each |
 | generated/numbers-*.svg | 1.7 KB each |
-| **Total assets** | **≈ 372 KB** (budget: < 6 MB; hero < 3 MB; each SVG < 400 KB) |
+| **Total assets** | **≈ 267 KB** (budget: < 6 MB; hero < 3 MB; each SVG < 400 KB) |
+
+## Contrast fix (29 Oct 2026, branch design/hero-contrast-fix)
+
+Owner's live screenshots showed the LIGHT hero as unmanaged: the gold
+tagline was unreadable on cream, and the portrait circle clashed with
+the soft skyline. Dark hero was acceptable and is unchanged except for
+the shared portrait re-treatment. Layout, wording, skyline, and palette
+family are unchanged.
+
+- Portrait (scripts/portrait.py; generate.py embeds the new
+  file into both heroes): gentle contrast compression before duotone
+  (old duotone luminance p5=10, p95=243, stdev 79; new warm-grey duotone
+  p5=69, p95=188, stdev 42 — blacks lifted, whites capped, still
+  photographic), muted warm-grey duotone instead of navy-black/white
+  (no pure black, no pure white, no saturated gold in the skin),
+  feathered circular edge (~4px blur), thinner light ring (5px → 3px,
+  muted #9A7B14; dark ring unchanged at 5px gold).
+- Light tagline: #C9A227 on #F5F2EA was 2.16:1 (FAIL AA) and 1.99:1 on
+  #EDE9DC. New deep bronze #7A5E00: 5.47:1 on #F5F2EA, 5.04:1 on
+  #EDE9DC (both PASS AA). Gold is kept only for the thin rule/accents.
+  Other light-hero text already passed and is unchanged: name #10182A
+  15.83:1, subtitle #4A556E 6.67:1. Dark tagline #E6C35C on navy
+  11.61:1 (unchanged, PASS).
+- Light background: white sweep 0.12 → 0.06 opacity, vignette edge
+  0.45 → 0.52, bar opacity 0.55/0.80 → 0.65/0.90, so the skyline reads
+  without turning the hero dark.
+- Verification (this branch): scripts/verify.py ALL GATES PASS;
+  screenshots re-rendered desktop + mobile, dark + light, via
+  Playwright + Meta Chromium (docs/preview/). Known remaining limit:
+  at 350px the 2.39:1 letterbox scales small — inherent to the
+  letterbox format, pre-existing, not introduced by this fix.
+- GitHub's own profile chrome (sidebar avatar/bio/email/achievements,
+  Pinned section, contribution graph/activity) is NOT controlled by
+  the README and cannot be removed by a README change. This fix
+  changes only what the README controls: the hero images and portrait.
 
 ## How to regenerate
 ```sh
@@ -79,7 +114,11 @@ as_of date — never a status CI does not support.
 ## Appendix — verification table (29 Oct 2026, local run)
 See PR-BODY.md for the full table. Summary: budgets PASS, no-script /
 no-external-reference grep PASS, alt text PASS, img dimensions PASS,
-link checks PASS except where noted, screenshots PASS (local preview
-page via Meta Chromium, not github.com — the merged profile cannot be
-screenshotted until the PR merges). CI-status honesty: see README
-status table; the toolkit ruff failure is real and is NOT hidden.
+link checks PASS except where noted (LinkedIn 999 = bot-block, URL
+verified), screenshots PASS (local preview page via Meta Chromium,
+re-rendered for the contrast fix: desktop + mobile, dark + light).
+Contrast-fix gates: light tagline 5.47:1/5.04:1 PASS AA (was 2.16:1
+FAIL); portrait softened (see Contrast fix section); dark hero
+unchanged in layout and verified visually. CI-status honesty: see
+README status table; the toolkit ruff failure is real and is NOT
+hidden.
