@@ -235,8 +235,6 @@ POSTERS = [
      ["Research", "8 sectors"], "Sectors alphabetical, not ranked"),
     ("Financial Research Analyst Agent", "Technicals, Piotroski, valuation, debate and Risk Veto.",
      ["Python", "pipeline"], "49 tests"),
-    ("NEPSE Tools — Nepse Decode", "Public NEPSE tools on the portfolio site.",
-     ["Web", "NEPSE"], "External site · portfolio link"),
 ]
 
 
