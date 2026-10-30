@@ -1,1 +1,55 @@
-{"as_of":"2026-10-29","ci_note":"As of 29 Oct 2026: toolkit Tests matrix jobs pass on ubuntu/macos/windows, but the quality (ruff) job fails on tests/test_phase9_ensemble.py (RUF015). Scanner and analyst-agent latest Tests runs also show failure — job-level cause still being confirmed at generation time, so no repo is labelled 'Live' on CI grounds here. See README status table.","repos":[{"commits":59,"name":"finance-research-agents","short":"agents","tests":null},{"commits":47,"name":"investment-analyst-toolkit","short":"toolkit","tests":129},{"commits":12,"name":"equity-research-playbook","short":"playbook","tests":null},{"commits":29,"name":"nepali-capital-market-research","short":"scanner","tests":57},{"commits":12,"name":"nepal-market-research","short":"nepal-mkt","tests":null},{"commits":10,"name":"nepali-business-opportunities","short":"biz-opp","tests":null},{"commits":18,"name":"financial-research-analyst-agent","short":"analyst","tests":46}],"source":"GitHub REST API, public repositories, fetched 29 Oct 2026; test counts verified locally 28 Oct 2026","totals":{"commits_finance_repos":187,"finance_repos":7,"programme_repos_incl_profile":8,"tests_total":232}}
+{
+  "as_of": "2026-10-30",
+  "ci_note": "As of 30 Oct 2026: quality (ruff) jobs fixed 29 Oct (toolkit nepse_loader, scanner __all__ sort); check-numbers failures of 29 Oct fixed 30 Oct by updating READMEs to generated counts (toolkit 198, scanner 73); new CI runs pending after those pushes.",
+  "repos": [
+    {
+      "commits": 59,
+      "name": "finance-research-agents",
+      "short": "agents",
+      "tests": null
+    },
+    {
+      "commits": 47,
+      "name": "investment-analyst-toolkit",
+      "short": "toolkit",
+      "tests": 198
+    },
+    {
+      "commits": 12,
+      "name": "equity-research-playbook",
+      "short": "playbook",
+      "tests": 6
+    },
+    {
+      "commits": 29,
+      "name": "nepali-capital-market-research",
+      "short": "scanner",
+      "tests": 73
+    },
+    {
+      "commits": 12,
+      "name": "nepal-market-research",
+      "short": "nepal-mkt",
+      "tests": null
+    },
+    {
+      "commits": 10,
+      "name": "nepali-business-opportunities",
+      "short": "biz-opp",
+      "tests": null
+    },
+    {
+      "commits": 18,
+      "name": "financial-research-analyst-agent",
+      "short": "analyst",
+      "tests": 49
+    }
+  ],
+  "source": "GitHub REST API, public repositories, fetched 29 Oct 2026; test counts verified locally 30 Oct 2026",
+  "totals": {
+    "commits_finance_repos": 187,
+    "finance_repos": 7,
+    "programme_repos_incl_profile": 8,
+    "tests_total": 326
+  }
+}
