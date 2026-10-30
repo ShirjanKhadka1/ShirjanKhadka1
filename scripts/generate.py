@@ -206,17 +206,17 @@ def skyline(pal, stats):
 
 def numbers(pal, stats):
     W, H = 1800, 420
-    cells = [("7", "public finance repos"), ("326", "tests passing, locally verified"),
+    cells = [("7", "public finance repos"), ("325", "tests passing, locally verified"),
              ("187", "commits across those repos"), ("Python", "dominant language")]
     out = ""
     for i, (v, label) in enumerate(cells):
         x = 120 + i * 430
         out += (f'<text x="{x}" y="170" font-family="{SANS}" font-size="84" font-weight="bold" fill="{pal["gold2"]}">{v}</text>'
                 f'<text x="{x}" y="230" font-family="{SANS}" font-size="30" fill="{pal["muted"]}">{label}</text>')
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="By the numbers: 7 public finance repos, 326 tests passing, 187 commits">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="By the numbers: 7 public finance repos, 325 tests passing, 187 commits">
 <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{pal["bg0"]}"/><stop offset="1" stop-color="{pal["bg1"]}"/></linearGradient></defs>
 <rect width="{W}" height="{H}" fill="url(#bg)"/>{out}
-<text x="120" y="330" font-family="{SANS}" font-size="26" fill="{pal["muted"]}">Test counts verified locally 30 Oct 2026 (toolkit 198, scanner 73, analyst-agent 49, playbook 6). CI status as of {stats['as_of']} in the README table.</text>
+<text x="120" y="330" font-family="{SANS}" font-size="26" fill="{pal["muted"]}">Test counts verified locally 30 Oct 2026 (toolkit 197, scanner 73, analyst-agent 49, playbook 6). CI status as of {stats['as_of']} in the README table.</text>
 </svg>"""
 
 
@@ -224,7 +224,7 @@ POSTERS = [
     ("Finance Research Agents", "Research teams that check their own work.",
      ["Markdown", "18 agents"], "18 agents · 10 runbooks"),
     ("Investment Analyst Toolkit", "Ratios to Monte Carlo, tested and reproducible.",
-     ["Python", "zero-dep"], "198 tests · CI matrix runs pass"),
+     ["Python", "zero-dep"], "197 tests · CI matrix runs pass"),
     ("Equity Research Playbook", "Initiation, earnings, forensic and valuation templates.",
      ["Markdown", "templates"], "Templates · falsifier checklists"),
     ("Nepali Capital Market Research", "NEPSE structure plus a CSV-only scanner.",

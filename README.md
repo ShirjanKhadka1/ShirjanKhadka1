@@ -30,7 +30,7 @@ Free tools. Open code. Honest research.
 </td>
 <td width="50%">
 <a href="https://github.com/ShirjanKhadka1/investment-analyst-toolkit">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-2-light.svg"><img src="assets/posters/poster-2-dark.svg" alt="Investment Analyst Toolkit poster: 195 tests" width="430" height="187"></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-2-light.svg"><img src="assets/posters/poster-2-dark.svg" alt="Investment Analyst Toolkit poster: 197 tests" width="430" height="187"></picture>
 </a>
 </td>
 </tr>
@@ -42,7 +42,7 @@ Free tools. Open code. Honest research.
 </td>
 <td width="50%">
 <a href="https://github.com/ShirjanKhadka1/nepali-capital-market-research">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-4-light.svg"><img src="assets/posters/poster-4-dark.svg" alt="Nepali Capital Market Research poster: NEPSE scanner, 70 tests" width="430" height="187"></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-4-light.svg"><img src="assets/posters/poster-4-dark.svg" alt="Nepali Capital Market Research poster: NEPSE scanner, 73 tests" width="430" height="187"></picture>
 </a>
 </td>
 </tr>
@@ -91,13 +91,13 @@ Every tag above is implemented in the repos linked above — DCF, multiples, opt
 
 Numbers are fetched from the public GitHub API (see `scripts/stats.json`, as of 30 Oct 2026) and test counts were verified locally on 30 Oct 2026 (generated counts in `status.json`, produced by `scripts/generate_status.py`, checked by `scripts/check_numbers.py`).
 
-Note: the numbers graphic above was regenerated 30 Oct 2026 from `scripts/stats.json` with the verified totals (toolkit 198, scanner 73, analyst-agent 49, playbook 6). The SVG itself is not hand-edited. The skyline shows commits per repository — it is not a contribution calendar, because the full contribution calendar cannot be sourced cleanly with the available token scope.
+Note: the numbers graphic above was regenerated 30 Oct 2026 from `scripts/stats.json` with the verified totals (toolkit 197, scanner 73, analyst-agent 49, playbook 6). The SVG itself is not hand-edited. The skyline shows commits per repository — it is not a contribution calendar, because the full contribution calendar cannot be sourced cleanly with the available token scope.
 
 ### Status, honestly stated (30 Oct 2026 — test counts generated, see `status.json`)
 
-| Repo | Tests (generated, 29 Oct 2026) | Latest CI Tests run |
+| Repo | Tests (generated, 30 Oct 2026) | Latest CI Tests run |
 |---|---|---|
-| Investment Analyst Toolkit | 198/198 | Locally verified 30 Oct 2026; check-numbers README fix pushed 30 Oct, new CI run pending. Quality (ruff) job fixed 29 Oct. |
+| Investment Analyst Toolkit | 197/197 | Locally verified 30 Oct 2026; check-numbers README fix pushed 30 Oct, new CI run pending. Quality (ruff) job fixed 29 Oct. |
 | Nepali Capital Market Research (scanner) | 73/73 | Locally verified 30 Oct 2026; check-numbers README fix pushed 30 Oct, new CI run pending. Quality (ruff) job fixed 29 Oct. |
 | Financial Research Analyst Agent | 49/49 | Locally verified 30 Oct 2026; check-numbers run passed in CI. |
 | Equity Research Playbook | 6/6 | Locally verified 30 Oct 2026; check-numbers run passed in CI. |
