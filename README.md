@@ -89,18 +89,18 @@ Every tag above is implemented in the repos linked above — DCF, multiples, opt
   <img src="generated/skyline-dark.svg" alt="Activity skyline: commits per finance repository, fetched from the GitHub API" width="900" height="260">
 </picture>
 
-Numbers are fetched from the public GitHub API (see `scripts/stats.json`, as of 29 Oct 2026) and test counts were verified locally on 29 Oct 2026 (generated counts in `status.json`, produced by `scripts/generate_status.py`, checked by `scripts/check_numbers.py`).
+Numbers are fetched from the public GitHub API (see `scripts/stats.json`, as of 30 Oct 2026) and test counts were verified locally on 30 Oct 2026 (generated counts in `status.json`, produced by `scripts/generate_status.py`, checked by `scripts/check_numbers.py`).
 
-Note (Round 3): the numbers graphic above was generated 29 Oct 2026 from `scripts/stats.json` and is stale against the generated `status.json` totals; regenerate it with `make verify` + `scripts/generate.py` after the Round 3 PRs merge. The SVG itself is not hand-edited, so its old totals stay visible until that regeneration runs. The skyline shows commits per repository — it is not a contribution calendar, because the full contribution calendar cannot be sourced cleanly with the available token scope.
+Note: the numbers graphic above was regenerated 30 Oct 2026 from `scripts/stats.json` with the verified totals (toolkit 198, scanner 73, analyst-agent 49, playbook 6). The SVG itself is not hand-edited. The skyline shows commits per repository — it is not a contribution calendar, because the full contribution calendar cannot be sourced cleanly with the available token scope.
 
-### Status, honestly stated (29 Oct 2026 — test counts generated, see `status.json`)
+### Status, honestly stated (30 Oct 2026 — test counts generated, see `status.json`)
 
 | Repo | Tests (generated, 29 Oct 2026) | Latest CI Tests run |
 |---|---|---|
-| Investment Analyst Toolkit | 195/195 | Last recorded 28 Oct 2026, not re-checked in Round 3: matrix jobs pass (ubuntu/macOS/Windows); quality (ruff) job fails on `tests/test_phase9_ensemble.py` (RUF015). That fix belongs in the toolkit repo, not here. |
-| Nepali Capital Market Research (scanner) | 70/70 | Last recorded 28 Oct 2026, not re-checked in Round 3: matrix jobs pass (all 9, ubuntu/macOS/Windows); smoke passes; quality (ruff) job fails — same pattern as the toolkit. |
-| Financial Research Analyst Agent | 49/49 | Last recorded 28 Oct 2026, not re-checked in Round 3: matrix jobs pass (all 9, ubuntu/macOS/Windows); smoke passes; quality (ruff) job fails — same pattern as the toolkit. |
-| Equity Research Playbook | 6/6 | Last recorded 29 Oct 2026: local pytest run, no CI workflow yet (Round 3 workflow prepared for the parent browser route). |
+| Investment Analyst Toolkit | 198/198 | Locally verified 30 Oct 2026; check-numbers README fix pushed 30 Oct, new CI run pending. Quality (ruff) job fixed 29 Oct. |
+| Nepali Capital Market Research (scanner) | 73/73 | Locally verified 30 Oct 2026; check-numbers README fix pushed 30 Oct, new CI run pending. Quality (ruff) job fixed 29 Oct. |
+| Financial Research Analyst Agent | 49/49 | Locally verified 30 Oct 2026; check-numbers run passed in CI. |
+| Equity Research Playbook | 6/6 | Locally verified 30 Oct 2026; check-numbers run passed in CI. |
 | Other repos | Markdown/research, no test suite | — |
 
 No repo on this page is labelled "Live" on CI grounds alone. CodeQL runs for the code repos completed successfully on 28 Oct 2026.
@@ -124,6 +124,6 @@ No repo on this page is labelled "Live" on CI grounds alone. CodeQL runs for the
 
 *Research and education only. Never investment advice, never a buy/sell recommendation, never guaranteed returns.*
 
-*Profile generated 29 Oct 2026. Regenerate with `make verify` + `scripts/fetch_stats.py` + `scripts/generate.py` (see DESIGN.md).*
+*Profile generated 30 Oct 2026. Regenerate with `make verify` + `scripts/fetch_stats.py` + `scripts/generate.py` (see DESIGN.md).*
 
 </div>
