@@ -1,6 +1,6 @@
 {
   "as_of": "2026-10-30",
-  "ci_note": "As of 30 Oct 2026: quality (ruff) jobs fixed 29 Oct (toolkit nepse_loader, scanner __all__ sort); check-numbers failures of 29 Oct fixed 30 Oct by updating READMEs to generated counts (toolkit 198, scanner 73); new CI runs pending after those pushes.",
+  "ci_note": "As of 30 Oct 2026: quality (ruff) jobs fixed 29 Oct (toolkit nepse_loader, scanner __all__ sort); check-numbers failures of 29 Oct fixed 30 Oct by updating READMEs to generated counts (toolkit 197, scanner 73); new CI runs pending after those pushes.",
   "repos": [
     {
       "commits": 59,
@@ -12,7 +12,7 @@
       "commits": 47,
       "name": "investment-analyst-toolkit",
       "short": "toolkit",
-      "tests": 198
+      "tests": 197
     },
     {
       "commits": 12,
@@ -50,6 +50,6 @@
     "commits_finance_repos": 187,
     "finance_repos": 7,
     "programme_repos_incl_profile": 8,
-    "tests_total": 326
+    "tests_total": 325
   }
 }
