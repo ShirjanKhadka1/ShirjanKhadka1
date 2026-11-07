@@ -204,38 +204,65 @@ def skyline(pal, stats):
 {bars}</svg>"""
 
 
+def _show(value):
+    """Render a stats value, or 'n/a' when it was unfetchable (never guess)."""
+    return str(value) if value is not None else "n/a"
+
+
+def _tests_by_short(stats):
+    """Per-repo test counts from stats.json, keyed by short name."""
+    return {r["short"]: r.get("tests") for r in stats.get("repos", [])}
+
+
 def numbers(pal, stats):
     W, H = 1800, 420
-    cells = [("7", "public finance repos"), ("325", "tests passing, locally verified"),
-             ("187", "commits across those repos"), ("Python", "dominant language")]
+    totals = stats.get("totals", {})
+    tests = _tests_by_short(stats)
+    total_tests = _show(totals.get("tests_total"))
+    total_commits = _show(totals.get("commits_finance_repos"))
+    cells = [("7", "public finance repos"), (total_tests, "tests passing, locally verified"),
+             (total_commits, "commits across those repos"), ("Python", "dominant language")]
     out = ""
     for i, (v, label) in enumerate(cells):
         x = 120 + i * 430
         out += (f'<text x="{x}" y="170" font-family="{SANS}" font-size="84" font-weight="bold" fill="{pal["gold2"]}">{v}</text>'
                 f'<text x="{x}" y="230" font-family="{SANS}" font-size="30" fill="{pal["muted"]}">{label}</text>')
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="By the numbers: 7 public finance repos, 325 tests passing, 187 commits">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="By the numbers: 7 public finance repos, {total_tests} tests passing, {total_commits} commits">
 <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{pal["bg0"]}"/><stop offset="1" stop-color="{pal["bg1"]}"/></linearGradient></defs>
 <rect width="{W}" height="{H}" fill="url(#bg)"/>{out}
-<text x="120" y="330" font-family="{SANS}" font-size="26" fill="{pal["muted"]}">Test counts verified locally 30 Oct 2026 (toolkit 197, scanner 73, analyst-agent 49, playbook 6). CI status as of {stats['as_of']} in the README table.</text>
+<text x="120" y="330" font-family="{SANS}" font-size="26" fill="{pal["muted"]}">Test counts from owning repos' live status.json, as of {stats['as_of']} (toolkit {_show(tests.get("toolkit"))}, scanner {_show(tests.get("scanner"))}, analyst-agent {_show(tests.get("analyst"))}, playbook {_show(tests.get("playbook"))}). CI status as of {stats['as_of']} in the README table.</text>
 </svg>"""
 
 
-POSTERS = [
-    ("Finance Research Agents", "Research teams that check their own work.",
-     ["Markdown", "18 agents"], "18 agents · 10 runbooks"),
-    ("Investment Analyst Toolkit", "Ratios to Monte Carlo, tested and reproducible.",
-     ["Python", "zero-dep"], "197 tests · CI matrix runs pass"),
-    ("Equity Research Playbook", "Initiation, earnings, forensic and valuation templates.",
-     ["Markdown", "templates"], "Templates · falsifier checklists"),
-    ("Nepali Capital Market Research", "NEPSE structure plus a CSV-only scanner.",
-     ["Python", "NEPSE"], "73 scanner tests"),
-    ("Nepal Market Research", "Sourced NEPSE case studies, honestly labelled.",
-     ["Research", "BNT"], "BNT study: inputs only, not a valuation"),
-    ("Nepali Business Opportunities", "Opportunity scorecard, ranked only by evidence.",
-     ["Research", "8 sectors"], "Sectors alphabetical, not ranked"),
-    ("Financial Research Analyst Agent", "Technicals, Piotroski, valuation, debate and Risk Veto.",
-     ["Python", "pipeline"], "49 tests"),
-]
+def build_posters(stats):
+    """Poster specs, with counts read from stats.json, never typed.
+
+    Previously these strings were hardcoded here ('18 agents',
+    '197 tests', '73 scanner tests', '325' in numbers()), so even a
+    fixed fetch_stats.py left the public posters stale. Now the
+    numbers flow from stats.json, which fetch_stats.py fills from
+    the owning repos' live status.json files.
+    """
+    totals = stats.get("totals", {})
+    tests = _tests_by_short(stats)
+    agents = _show(totals.get("agents"))
+    runbooks = _show(totals.get("runbooks"))
+    return [
+        ("Finance Research Agents", "Research teams that check their own work.",
+         ["Markdown", f"{agents} agents"], f"{agents} agents · {runbooks} runbooks"),
+        ("Investment Analyst Toolkit", "Ratios to Monte Carlo, tested and reproducible.",
+         ["Python", "zero-dep"], f"{_show(tests.get('toolkit'))} tests · CI matrix runs pass"),
+        ("Equity Research Playbook", "Initiation, earnings, forensic and valuation templates.",
+         ["Markdown", "templates"], "Templates · falsifier checklists"),
+        ("Nepali Capital Market Research", "NEPSE structure plus a CSV-only scanner.",
+         ["Python", "NEPSE"], f"{_show(tests.get('scanner'))} scanner tests"),
+        ("Nepal Market Research", "Sourced NEPSE case studies, honestly labelled.",
+         ["Research", "BNT"], "BNT study: inputs only, not a valuation"),
+        ("Nepali Business Opportunities", "Opportunity scorecard, ranked only by evidence.",
+         ["Research", "8 sectors"], "Sectors alphabetical, not ranked"),
+        ("Financial Research Analyst Agent", "Technicals, Piotroski, valuation, debate and Risk Veto.",
+         ["Python", "pipeline"], f"{_show(tests.get('analyst'))} tests"),
+    ]
 
 
 def main():
@@ -254,7 +281,7 @@ def main():
     for name, pal in (("principles-dark", DARK), ("principles-light", LIGHT)):
         with open(os.path.join(assets, f"{name}.svg"), "w") as f:
             f.write(principles(pal))
-    for i, (title, value, tags, status) in enumerate(POSTERS):
+    for i, (title, value, tags, status) in enumerate(build_posters(stats)):
         for variant, pal in (("dark", DARK), ("light", LIGHT)):
             with open(os.path.join(assets, "posters", f"poster-{i + 1}-{variant}.svg"), "w") as f:
                 f.write(poster(pal, title, value, tags, status))
