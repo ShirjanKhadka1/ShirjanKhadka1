@@ -1,55 +1,57 @@
 {
-  "as_of": "2026-10-30",
-  "ci_note": "As of 30 Oct 2026: quality (ruff) jobs fixed 29 Oct (toolkit nepse_loader, scanner __all__ sort); check-numbers failures of 29 Oct fixed 30 Oct by updating READMEs to generated counts (toolkit 197, scanner 73); new CI runs pending after those pushes.",
+  "as_of": "2026-11-07",
+  "source": "GitHub REST API (commit counts) + owning repos' live status.json on main (test counts, raw.githubusercontent.com)",
   "repos": [
     {
-      "commits": 59,
       "name": "finance-research-agents",
       "short": "agents",
+      "commits": 118,
       "tests": null
     },
     {
-      "commits": 47,
       "name": "investment-analyst-toolkit",
       "short": "toolkit",
-      "tests": 197
+      "commits": 117,
+      "tests": 250
     },
     {
-      "commits": 12,
       "name": "equity-research-playbook",
       "short": "playbook",
+      "commits": 26,
       "tests": 6
     },
     {
-      "commits": 29,
       "name": "nepali-capital-market-research",
       "short": "scanner",
-      "tests": 73
+      "commits": 70,
+      "tests": 108
     },
     {
-      "commits": 12,
       "name": "nepal-market-research",
       "short": "nepal-mkt",
+      "commits": 32,
       "tests": null
     },
     {
-      "commits": 10,
       "name": "nepali-business-opportunities",
       "short": "biz-opp",
+      "commits": 22,
       "tests": null
     },
     {
-      "commits": 18,
       "name": "financial-research-analyst-agent",
       "short": "analyst",
+      "commits": 38,
       "tests": 49
     }
   ],
-  "source": "GitHub REST API, public repositories, fetched 29 Oct 2026; test counts verified locally 30 Oct 2026",
   "totals": {
-    "commits_finance_repos": 187,
     "finance_repos": 7,
     "programme_repos_incl_profile": 8,
-    "tests_total": 325
-  }
+    "commits_finance_repos": 423,
+    "tests_total": 413,
+    "agents": 19,
+    "runbooks": 11
+  },
+  "ci_note": "Test counts read from each owning repo's live status.json (no hardcoded counts); agents/runbooks from finance-research-agents ops/status.json. Commit counts from the GitHub REST API."
 }
