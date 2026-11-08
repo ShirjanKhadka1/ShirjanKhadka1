@@ -1,57 +1,57 @@
 {
-  "as_of": "2026-11-07",
+  "as_of": "2026-11-08",
   "source": "GitHub REST API (commit counts) + owning repos' live status.json on main (test counts, raw.githubusercontent.com)",
   "repos": [
     {
       "name": "finance-research-agents",
       "short": "agents",
-      "commits": 118,
+      "commits": 194,
       "tests": null
     },
     {
       "name": "investment-analyst-toolkit",
       "short": "toolkit",
-      "commits": 117,
-      "tests": 250
+      "commits": 239,
+      "tests": 512
     },
     {
       "name": "equity-research-playbook",
       "short": "playbook",
-      "commits": 26,
+      "commits": 27,
       "tests": 6
     },
     {
       "name": "nepali-capital-market-research",
       "short": "scanner",
-      "commits": 70,
-      "tests": 108
+      "commits": 96,
+      "tests": 113
     },
     {
       "name": "nepal-market-research",
       "short": "nepal-mkt",
-      "commits": 32,
+      "commits": 33,
       "tests": null
     },
     {
       "name": "nepali-business-opportunities",
       "short": "biz-opp",
-      "commits": 22,
+      "commits": 30,
       "tests": null
     },
     {
       "name": "financial-research-analyst-agent",
       "short": "analyst",
-      "commits": 38,
+      "commits": 48,
       "tests": 49
     }
   ],
   "totals": {
     "finance_repos": 7,
     "programme_repos_incl_profile": 8,
-    "commits_finance_repos": 423,
-    "tests_total": 413,
-    "agents": 19,
-    "runbooks": 11
+    "commits_finance_repos": 667,
+    "tests_total": 680,
+    "agents": 36,
+    "runbooks": 12
   },
   "ci_note": "Test counts read from each owning repo's live status.json (no hardcoded counts); agents/runbooks from finance-research-agents ops/status.json. Commit counts from the GitHub REST API."
 }
