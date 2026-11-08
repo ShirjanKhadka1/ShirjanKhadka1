@@ -1,7 +1,7 @@
 name: Profile refresh
 on:
   schedule:
-    - cron: "30 2 * * *"
+    - cron: "30 2 * * *" # Runs at 02:30
   workflow_dispatch:
 jobs:
   refresh:
@@ -13,6 +13,10 @@ jobs:
           python-version: "3.12"
       - name: Install generator deps
         run: pip install Pillow fonttools
+      - name: Install Playwright (for make verify screenshots)
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
       - name: Fetch stats (keeps last-known-good on failure)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
