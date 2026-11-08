@@ -247,21 +247,24 @@ def build_posters(stats):
     tests = _tests_by_short(stats)
     agents = _show(totals.get("agents"))
     runbooks = _show(totals.get("runbooks"))
+    # Scope pills (8 Nov 2026): every card states its market plainly.
+    # NEPSE-only cards say so; global cards say so; mixed cards say both.
+    # Never claim a NEPSE-only repo is global, or a global repo is NEPSE.
     return [
         ("Finance Research Agents", "Research teams that check their own work.",
-         ["Markdown", f"{agents} agents"], f"{agents} agents · {runbooks} runbooks"),
-        ("Investment Analyst Toolkit", "Ratios to Monte Carlo, tested and reproducible.",
-         ["Python", "zero-dep"], f"{_show(tests.get('toolkit'))} tests · CI matrix runs pass"),
+         ["Markdown", f"{agents} agents", "NEPSE + Global"], f"{agents} agents · {runbooks} runbooks"),
+        ("Investment Analyst Toolkit", "Ratios to Monte Carlo, NEPSE and global.",
+         ["Python", "zero-dep", "NEPSE + Global"], f"{_show(tests.get('toolkit'))} tests · CI matrix runs pass"),
         ("Equity Research Playbook", "Initiation, earnings, forensic and valuation templates.",
-         ["Markdown", "templates"], "Templates · falsifier checklists"),
+         ["Markdown", "templates", "Global"], "Templates · falsifier checklists"),
         ("Nepali Capital Market Research", "NEPSE structure plus a CSV-only scanner.",
-         ["Python", "NEPSE"], f"{_show(tests.get('scanner'))} scanner tests"),
+         ["Python", "NEPSE only"], f"{_show(tests.get('scanner'))} scanner tests"),
         ("Nepal Market Research", "Sourced NEPSE case studies, honestly labelled.",
-         ["Research", "BNT"], "BNT study: inputs only, not a valuation"),
-        ("Nepali Business Opportunities", "Opportunity scorecard, ranked only by evidence.",
-         ["Research", "8 sectors"], "Sectors alphabetical, not ranked"),
+         ["Research", "BNT", "NEPSE only"], "BNT study: inputs only, not a valuation"),
+        ("Nepali Business Opportunities", "Nepal opportunity scorecard, ranked only by evidence.",
+         ["Research", "8 sectors", "Nepal only"], "Sectors alphabetical, not ranked"),
         ("Financial Research Analyst Agent", "Technicals, Piotroski, valuation, debate and Risk Veto.",
-         ["Python", "pipeline"], f"{_show(tests.get('analyst'))} tests"),
+         ["Python", "pipeline", "Global"], f"{_show(tests.get('analyst'))} tests"),
     ]
 
 
