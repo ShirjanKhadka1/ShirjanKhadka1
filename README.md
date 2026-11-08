@@ -25,12 +25,12 @@ Free tools. Open code. Honest research.
 <tr>
 <td width="50%">
 <a href="https://github.com/ShirjanKhadka1/finance-research-agents">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-1-light.svg"><img src="assets/posters/poster-1-dark.svg" alt="Finance Research Agents poster: 19 agents, 11 runbooks" width="430" height="187"></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-1-light.svg"><img src="assets/posters/poster-1-dark.svg" alt="Finance Research Agents poster: 36 agents, 12 runbooks" width="430" height="187"></picture>
 </a>
 </td>
 <td width="50%">
 <a href="https://github.com/ShirjanKhadka1/investment-analyst-toolkit">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-2-light.svg"><img src="assets/posters/poster-2-dark.svg" alt="Investment Analyst Toolkit poster: 250 tests" width="430" height="187"></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-2-light.svg"><img src="assets/posters/poster-2-dark.svg" alt="Investment Analyst Toolkit poster: 512 tests" width="430" height="187"></picture>
 </a>
 </td>
 </tr>
@@ -42,7 +42,7 @@ Free tools. Open code. Honest research.
 </td>
 <td width="50%">
 <a href="https://github.com/ShirjanKhadka1/nepali-capital-market-research">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-4-light.svg"><img src="assets/posters/poster-4-dark.svg" alt="Nepali Capital Market Research poster: NEPSE scanner, 108 tests" width="430" height="187"></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-4-light.svg"><img src="assets/posters/poster-4-dark.svg" alt="Nepali Capital Market Research poster: NEPSE scanner, 113 tests" width="430" height="187"></picture>
 </a>
 </td>
 </tr>
@@ -89,17 +89,17 @@ Every tag above is implemented in the repos linked above — DCF, multiples, opt
   <img src="generated/skyline-dark.svg" alt="Activity skyline: commits per finance repository, fetched from the GitHub API" width="900" height="260">
 </picture>
 
-Numbers are fetched from the public GitHub API (see `scripts/stats.json`, as of 7 Nov 2026) and test counts were verified locally on 7 Nov 2026 (generated counts in `status.json`, produced by `scripts/generate_status.py`, checked by `scripts/check_numbers.py`).
+Numbers are fetched from the public GitHub API (see `scripts/stats.json`, as of 8 Nov 2026) and test counts were verified locally on 8 Nov 2026 (generated counts in `status.json`, produced by `scripts/generate_status.py`, checked by `scripts/check_numbers.py`).
 
-Note: the numbers graphic above was regenerated 7 Nov 2026 from `scripts/stats.json` with the verified totals (toolkit 250, scanner 108, analyst-agent 49, playbook 6). The SVG itself is not hand-edited. The skyline shows commits per repository — it is not a contribution calendar, because the full contribution calendar cannot be sourced cleanly with the available token scope.
+Note: the numbers graphic above was regenerated 8 Nov 2026 from `scripts/stats.json` with the verified totals (toolkit 512, scanner 113, analyst-agent 49, playbook 6). The SVG itself is not hand-edited. The skyline shows commits per repository — it is not a contribution calendar, because the full contribution calendar cannot be sourced cleanly with the available token scope.
 
-### Status, honestly stated (7 Nov 2026 — test counts generated, see `status.json`)
+### Status, honestly stated (8 Nov 2026 — test counts generated, see `status.json`)
 
-| Repo | Tests (generated, 7 Nov 2026) | Latest CI Tests run |
+| Repo | Tests (generated, 8 Nov 2026) | Latest CI Tests run |
 |---|---|---|
-| Investment Analyst Toolkit | 250/250 | Locally verified 7 Nov 2026 (pytest 250/250 in a fresh clone); CI Tests + Check numbers + CodeQL green on the 7 Nov merge HEAD. |
-| Nepali Capital Market Research (scanner) | 108/108 | Locally verified 7 Nov 2026 (pytest 108/108 in a fresh clone); CI Tests + Check numbers + CodeQL green on the 7 Nov merge HEAD. |
-| Financial Research Analyst Agent | 49/49 | Locally verified 7 Nov 2026 (pytest 49/49 in a fresh clone); CI green on the 29 Oct HEAD. |
+| Investment Analyst Toolkit | 512/512 | Locally verified 8 Nov 2026 (pytest 512/512 in a fresh clone); CI Tests #235 green on main HEAD c5c3435. |
+| Nepali Capital Market Research (scanner) | 113/113 | CI Tests #94 green 8 Nov 2026; 113/113 per the repo's generated status.json. |
+| Financial Research Analyst Agent | 49/49 | Locally verified 7 Nov 2026 (pytest 49/49 in a fresh clone); CI Tests #51 green 8 Nov 2026. |
 | Equity Research Playbook | 6/6 | Locally verified 7 Nov 2026 (pytest 6/6 in a fresh clone); check-numbers green on the 29 Oct HEAD. |
 | Other repos | Markdown/research, no test suite | — |
 
@@ -124,6 +124,6 @@ No repo on this page is labelled "Live" on CI grounds alone. CodeQL runs for the
 
 *Research and education only. Never investment advice, never a buy/sell recommendation, never guaranteed returns.*
 
-*Profile generated 7 Nov 2026. Regenerate with `make verify` + `scripts/fetch_stats.py` + `scripts/generate.py` (see DESIGN.md).*
+*Profile generated 8 Nov 2026. Regenerate with `make verify` + `scripts/fetch_stats.py` + `scripts/generate.py` (see DESIGN.md).*
 
 </div>
