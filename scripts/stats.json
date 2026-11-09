@@ -1,18 +1,18 @@
 {
-  "as_of": "2026-11-08",
+  "as_of": "2026-11-09",
   "source": "GitHub REST API (commit counts) + owning repos' live status.json on main (test counts, raw.githubusercontent.com)",
   "repos": [
     {
       "name": "finance-research-agents",
       "short": "agents",
-      "commits": 194,
+      "commits": 195,
       "tests": null
     },
     {
       "name": "investment-analyst-toolkit",
       "short": "toolkit",
-      "commits": 239,
-      "tests": 512
+      "commits": 260,
+      "tests": 613
     },
     {
       "name": "equity-research-playbook",
@@ -48,8 +48,8 @@
   "totals": {
     "finance_repos": 7,
     "programme_repos_incl_profile": 8,
-    "commits_finance_repos": 667,
-    "tests_total": 680,
+    "commits_finance_repos": 689,
+    "tests_total": 781,
     "agents": 36,
     "runbooks": 12
   },
