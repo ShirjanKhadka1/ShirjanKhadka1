@@ -11,14 +11,14 @@
     {
       "name": "investment-analyst-toolkit",
       "short": "toolkit",
-      "commits": 286,
-      "tests": 620
+      "commits": 290,
+      "tests": 623
     },
     {
       "name": "equity-research-playbook",
       "short": "playbook",
       "commits": 27,
-      "tests": 6
+      "tests": null
     },
     {
       "name": "nepali-capital-market-research",
@@ -48,10 +48,10 @@
   "totals": {
     "finance_repos": 7,
     "programme_repos_incl_profile": 8,
-    "commits_finance_repos": 724,
-    "tests_total": 788,
+    "commits_finance_repos": 728,
+    "tests_total": 785,
     "agents": 36,
     "runbooks": 12
   },
-  "ci_note": "Test counts read from each owning repo's live status.json (no hardcoded counts); agents/runbooks from finance-research-agents ops/status.json. Commit counts from the GitHub REST API."
+  "ci_note": "Test counts read from each owning repo's live status.json (no hardcoded counts) for the three repos that publish one (toolkit, scanner, analyst-agent); agents/runbooks from finance-research-agents ops/status.json. The agents pack's pytest tests are not in totals.tests_total (no generated test count in that repo); the legacy playbook's tests are not counted (merged-away content). Commit counts from the GitHub REST API."
 }

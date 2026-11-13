@@ -30,6 +30,15 @@ SHORT = {"finance-research-agents": "agents", "investment-analyst-toolkit": "too
 # {toolkit: 129, scanner: 57, analyst: 46} with no playbook entry, so
 # even a successful fetch published stale totals -- 232 instead of
 # the true 413 on 7 Nov 2026.)
+# Only the three repos that publish a generated test count are listed.
+# The legacy playbook is excluded: its content merged into
+# finance-research-agents (its only test file now also lives there),
+# so counting it would double-count merged-away content. The agents
+# pack is excluded too: it publishes no generated test count
+# (ops/status.json carries agents/runbooks/templates only), so its 86
+# pytest tests are fresh-clone evidence in the README table, not a
+# generated number. totals.tests_total is therefore toolkit + scanner
+# + analyst-agent; programme-wide pytest total is that + agents 86.
 STATUS_JSON = {
     "investment-analyst-toolkit":
         "https://raw.githubusercontent.com/ShirjanKhadka1/investment-analyst-toolkit/main/status.json",
@@ -37,8 +46,6 @@ STATUS_JSON = {
         "https://raw.githubusercontent.com/ShirjanKhadka1/nepali-capital-market-research/main/status.json",
     "financial-research-analyst-agent":
         "https://raw.githubusercontent.com/ShirjanKhadka1/financial-research-analyst-agent/main/status.json",
-    "equity-research-playbook":
-        "https://raw.githubusercontent.com/ShirjanKhadka1/equity-research-playbook/main/status.json",
 }
 AGENTS_STATUS_JSON = ("https://raw.githubusercontent.com/ShirjanKhadka1/"
                       "finance-research-agents/main/ops/status.json")
@@ -79,8 +86,12 @@ def main():
            "source": "GitHub REST API (commit counts) + owning repos' live status.json on main (test counts, raw.githubusercontent.com)",
            "repos": [], "totals": {},
            "ci_note": ("Test counts read from each owning repo's live status.json "
-                       "(no hardcoded counts); agents/runbooks from "
-                       "finance-research-agents ops/status.json. Commit counts "
+                       "(no hardcoded counts) for the three repos that publish one "
+                       "(toolkit, scanner, analyst-agent); agents/runbooks from "
+                       "finance-research-agents ops/status.json. The agents pack's "
+                       "pytest tests are not in totals.tests_total (no generated "
+                       "test count in that repo); the legacy playbook's tests are "
+                       "not counted (merged-away content). Commit counts "
                        "from the GitHub REST API.")}
     total_commits = total_tests = 0
     for repo in REPOS:
