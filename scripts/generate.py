@@ -230,7 +230,7 @@ def numbers(pal, stats):
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="By the numbers: 7 public finance repos, {total_tests} tests passing, {total_commits} commits">
 <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{pal["bg0"]}"/><stop offset="1" stop-color="{pal["bg1"]}"/></linearGradient></defs>
 <rect width="{W}" height="{H}" fill="url(#bg)"/>{out}
-<text x="120" y="330" font-family="{SANS}" font-size="26" fill="{pal["muted"]}">Test counts from owning repos' live status.json, as of {stats['as_of']} (toolkit {_show(tests.get("toolkit"))}, scanner {_show(tests.get("scanner"))}, analyst-agent {_show(tests.get("analyst"))}, playbook {_show(tests.get("playbook"))}). CI status as of {stats['as_of']} in the README table.</text>
+<text x="120" y="330" font-family="{SANS}" font-size="26" fill="{pal["muted"]}">Test counts from owning repos' live status.json, as of {stats['as_of']} (toolkit {_show(tests.get("toolkit"))}, scanner {_show(tests.get("scanner"))}, analyst-agent {_show(tests.get("analyst"))}). Agents pack pytest tests not in this total — that repo publishes no generated test count; programme-wide total in the README. CI status as of {stats['as_of']} in the README table.</text>
 </svg>"""
 
 

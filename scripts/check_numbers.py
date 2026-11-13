@@ -37,6 +37,7 @@ PATTERNS = [
     (r"Toolkit poster: (\d+) tests", "toolkit_tests", "toolkit poster tests"),
     (r"scanner, (\d+) tests", "scanner_tests", "scanner poster tests"),
     (r"Analyst Agent poster: (\d+) tests", "analyst_tests", "analyst poster tests"),
+    (r"Total pytest tests \(generated\): (\d+)", "tests_total", "grid total definition"),
 ]
 ALLOWLIST = []
 FILE_COUNTS = []
@@ -95,7 +96,14 @@ def main():
                         errors.append(
                             f"{rel}:{lineno}: {desc} says {got}, "
                             f"status.json {field}={want}: {line.strip()[:140]}")
-    per_repo = ["toolkit_tests", "scanner_tests", "analyst_tests", "playbook_tests"]
+    # Grid total definition (Round 5 closeout, step 6): the sum of the
+    # repos that publish a generated test count — toolkit + scanner +
+    # analyst-agent. The legacy playbook's frozen tests are NOT counted
+    # (merged-away content, its test file also lives in the agents
+    # pack); the agents pack's tests are NOT in the total either (no
+    # generated test count in that repo). Programme-wide pytest total is
+    # this total + the agents pack's tests (see README status table).
+    per_repo = ["toolkit_tests", "scanner_tests", "analyst_tests"]
     if all(status.get(f) is not None for f in per_repo) and status.get("tests_total") is not None:
         if sum(status[f] for f in per_repo) != status["tests_total"]:
             errors.append(

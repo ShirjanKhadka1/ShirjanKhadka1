@@ -78,7 +78,19 @@ def main():
     analyst = get("financial-research-analyst-agent", "tests_total")
     scanner = get("nepali-capital-market-research", "tests_total")
     playbook = get("equity-research-playbook", "tests_total")
-    tests = [t for t in (toolkit, analyst, scanner, playbook) if t is not None]
+    # Total definition (Round 5 closeout, step 6): the sum of the repos
+    # that publish a generated test count — toolkit + scanner +
+    # analyst-agent. The agents pack's pytest tests are NOT in this
+    # total: finance-research-agents publishes no generated test count
+    # (ops/status.json carries agents/runbooks/templates only), so its
+    # 86 tests are fresh-clone evidence in the README table, not a
+    # generated number. The legacy playbook's 6 frozen tests are NOT
+    # counted either: its only test file (tests/test_check_template.py)
+    # now also lives in the agents pack, so counting it would
+    # double-count merged-away content. Programme-wide pytest total is
+    # this total + the agents pack's 86 (see README). playbook_tests is
+    # still recorded below for the status-table row.
+    tests = [t for t in (toolkit, analyst, scanner) if t is not None]
     status = {
         "repo": "ShirjanKhadka1",
         "agents": agents,
@@ -87,12 +99,24 @@ def main():
         "analyst_tests": analyst,
         "scanner_tests": scanner,
         "playbook_tests": playbook,
-        "tests_total": sum(tests) if len(tests) == 4 else None,
-        "tests_note": ("sum of the four owning repos' status.json tests_total; "
-                       "null if any owning status.json was unfetchable (TO VERIFY)")
-                       if len(tests) != 4 else
-                       "sum of toolkit + analyst-agent + scanner + playbook tests_total, "
-                       "each from that repo's generated status.json",
+        "tests_total": sum(tests) if len(tests) == 3 else None,
+        "tests_note": ("sum of the three repos that publish a generated "
+                       "test count: toolkit + scanner + analyst-agent. "
+                       "Agents pack pytest tests NOT included (that repo "
+                       "publishes no generated test count); legacy "
+                       "playbook tests NOT counted (merged-away content, "
+                       "its test file also lives in the agents pack). "
+                       "Programme-wide pytest total = this total + agents "
+                       "86. Null if any owning status.json was unfetchable "
+                       "(TO VERIFY)")
+                       if len(tests) != 3 else
+                       "sum of toolkit + scanner + analyst-agent "
+                       "tests_total, each from that repo's generated "
+                       "status.json. Agents pack pytest tests NOT included "
+                       "(no generated test count in that repo — see README "
+                       "status table, fresh-clone evidence); legacy "
+                       "playbook tests NOT counted (merged-away content). "
+                       "Programme-wide pytest total = this total + agents 86.",
         "sectors": get("nepali-business-opportunities", "sectors"),
         "generated_by": "scripts/generate_status.py (Round 3: fetched owning repos' status.json)",
         "generated_at": date.today().isoformat(),
