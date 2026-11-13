@@ -5,14 +5,14 @@
     {
       "name": "finance-research-agents",
       "short": "agents",
-      "commits": 201,
+      "commits": 204,
       "tests": null
     },
     {
       "name": "investment-analyst-toolkit",
       "short": "toolkit",
-      "commits": 275,
-      "tests": 614
+      "commits": 286,
+      "tests": 620
     },
     {
       "name": "equity-research-playbook",
@@ -48,8 +48,8 @@
   "totals": {
     "finance_repos": 7,
     "programme_repos_incl_profile": 8,
-    "commits_finance_repos": 710,
-    "tests_total": 782,
+    "commits_finance_repos": 724,
+    "tests_total": 788,
     "agents": 36,
     "runbooks": 12
   },
