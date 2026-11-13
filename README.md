@@ -30,7 +30,7 @@ Free tools. Open code. Honest research.
 </td>
 <td width="50%">
 <a href="https://github.com/ShirjanKhadka1/investment-analyst-toolkit">
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-2-light.svg"><img src="assets/posters/poster-2-dark.svg" alt="Investment Analyst Toolkit poster: 614 tests" width="430" height="187"></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/posters/poster-2-light.svg"><img src="assets/posters/poster-2-dark.svg" alt="Investment Analyst Toolkit poster: 620 tests" width="430" height="187"></picture>
 </a>
 </td>
 </tr>
@@ -91,20 +91,20 @@ Every tag above is implemented in the repos linked above — DCF, multiples, opt
 
 Numbers are fetched from the public GitHub API (see `scripts/stats.json`, as of 13 Nov 2026) and test counts were verified locally on 13 Nov 2026 (generated counts in `status.json`, produced by `scripts/generate_status.py`, checked by `scripts/check_numbers.py`).
 
-Note: the numbers graphic above was regenerated 13 Nov 2026 from `scripts/stats.json` with the verified totals (toolkit 614, scanner 113, analyst-agent 49, playbook 6). The SVG itself is not hand-edited. The skyline shows commits per repository — it is not a contribution calendar, because the full contribution calendar cannot be sourced cleanly with the available token scope.
+Note: the numbers graphic above was regenerated 13 Nov 2026 from `scripts/stats.json` with the verified totals (toolkit 620, scanner 113, analyst-agent 49, playbook 6). The SVG itself is not hand-edited. The skyline shows commits per repository — it is not a contribution calendar, because the full contribution calendar cannot be sourced cleanly with the available token scope.
 
 ### Status, honestly stated (13 Nov 2026 — test counts generated, see `status.json`)
 
 | Repo | Tests (generated, 13 Nov 2026) | Latest CI Tests run |
 |---|---|---|
-| Investment Analyst Toolkit | 614/614 | Locally verified 13 Nov 2026 (pytest 614/614 in a fresh clone of main HEAD a60aff6); PRs #12, #16, #17, #18 merged 13 Nov 2026, each 26/26 checks green. |
+| Investment Analyst Toolkit | 620/620 | Locally verified 13 Nov 2026 (pytest 620/620 in a fresh clone of main HEAD fdf0faf); PRs #12, #16–#19, #21, #22 merged 13 Nov 2026, each 26/26 checks green. |
 | Finance Research Agents | 86/86 | Locally verified 13 Nov 2026 (86/86 in a fresh clone of main); the agents pack has no generated test-count status.json, so this row is fresh-clone evidence, not a generated count. |
 | Nepali Capital Market Research (scanner) | 113/113 | CI Tests #94 green 8 Nov 2026; 113/113 per the repo's generated status.json. |
 | Financial Research Analyst Agent | 49/49 | Locally verified 7 Nov 2026 (pytest 49/49 in a fresh clone); CI Tests #51 green 8 Nov 2026. |
 | Equity Research Playbook | 6/6 | Locally verified 7 Nov 2026 (pytest 6/6 in a fresh clone); check-numbers green on the 29 Oct HEAD. |
 | Other repos | Markdown/research, no test suite | — |
 
-The 782 generated total in `status.json` covers toolkit + scanner + analyst-agent + playbook. The agents pack's 86 tests are verified separately by fresh-clone run (above) and are not part of the 782, because that repo publishes no generated test-count status.json.
+The 788 generated total in `status.json` covers toolkit + scanner + analyst-agent + playbook. The agents pack's 86 tests are verified separately by fresh-clone run (above) and are not part of the 788, because that repo publishes no generated test-count status.json.
 
 No repo on this page is labelled "Live" on CI grounds alone. CodeQL runs for the code repos completed successfully (toolkit and scanner on 7 Nov 2026; analyst-agent on 29 Oct 2026).
 
