@@ -1,18 +1,18 @@
 {
-  "as_of": "2026-11-27",
+  "as_of": "2026-11-28",
   "source": "GitHub REST API (commit counts) + owning repos' live status.json on main (test counts, raw.githubusercontent.com)",
   "repos": [
     {
       "name": "finance-research-agents",
       "short": "agents",
-      "commits": 218,
+      "commits": 223,
       "tests": null
     },
     {
       "name": "investment-analyst-toolkit",
       "short": "toolkit",
-      "commits": 437,
-      "tests": 1138
+      "commits": 452,
+      "tests": 1226
     },
     {
       "name": "equity-research-playbook",
@@ -48,9 +48,9 @@
   "totals": {
     "finance_repos": 7,
     "programme_repos_incl_profile": 8,
-    "commits_finance_repos": 889,
-    "tests_total": 1300,
-    "agents": 36,
+    "commits_finance_repos": 909,
+    "tests_total": 1388,
+    "agents": 41,
     "runbooks": 12
   },
   "ci_note": "Test counts read from each owning repo's live status.json (no hardcoded counts) for the three repos that publish one (toolkit, scanner, analyst-agent); agents/runbooks from finance-research-agents ops/status.json. The agents pack's pytest tests are not in totals.tests_total (no generated test count in that repo); the legacy playbook's tests are not counted (merged-away content). Commit counts from the GitHub REST API."
